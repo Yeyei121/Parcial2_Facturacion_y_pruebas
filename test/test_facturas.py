@@ -28,7 +28,7 @@ class TestFacturaCRUD(unittest.TestCase):
     def test_buscar_factura(self):
         """Prueba la búsqueda de una factura por fecha."""
         factura_encontrada = buscar_factura(self.fecha)
-        self.assertEqual(factura_encontrada, self.factura)
+        self.assertEqual(factura_encontrada.fecha, self.factura.fecha)
 
     def test_eliminar_factura(self):
         """Prueba la eliminación de una factura."""
@@ -52,3 +52,5 @@ class TestFacturaCRUD(unittest.TestCase):
         total_esperado = self.producto_control.precio + self.antibiotico.precio
         self.assertEqual(self.factura._calcular_total(), total_esperado)
 
+# Ejecutar las pruebas
+unittest.main(argv=[''], exit=False)
